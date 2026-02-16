@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="./theme.css" rel="stylesheet">
+    <link rel="icon" type="image/svg-icon" href="./assest/booking.svg">
+    <title>Book Appointment</title>
+    <style>
+        @media print {
+            body * {
+                visibility: hidden !important;
+            }
+            #print-area,
+            #print-area * {
+                visibility: visible !important;
+            }
+            #print-area {
+                position: fixed;
+                inset: 0;
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body class="page-shell theme-light motion-lite theme-mint min-h-screen bg-linear-to-br from-green-200 via-blue-300 to-green-300 text-slate-900">
+    <header class="w-full">
+        <nav class="mx-auto flex w-full max-w-5xl items-center justify-center px-4 py-6">
+            <div class="flex flex-wrap items-center justify-center gap-2 rounded-2xl border border-white/30 bg-white/40 p-2 shadow-lg backdrop-blur-md">
+                <a href="Home.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Home</a>
+                <a href="book Appoinment.html" class="rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-slate-900/20">Book Appointment</a>
+                <a href="spare.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Spare Parts</a>
+                <a href="customer.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Customer Details</a>
+                <a href="feedback.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Feedback</a>
+                <a href="contact.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Contact Us</a>
+                <a href="Login.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Log out</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mx-auto flex w-full max-w-4xl flex-col items-center px-4 pb-16 pt-6">
+        <section class="glass-card lift w-full rounded-3xl border border-white/20 bg-white/30 p-8 shadow-2xl backdrop-blur-md sm:p-10">
+            <div class="text-center">
+                <div class="title-row">
+                    <span class="title-icon"><img src="./assest/booking.svg" alt="Booking icon"></span>
+                    <p class="text-sm font-semibold uppercase tracking-[0.35em] text-slate-700">Book Appointment</p>
+                </div>
+                <h1 class="display-title mt-2 text-3xl font-bold text-slate-900 sm:text-4xl">Schedule Your Service</h1>
+                <p class="mt-3 text-sm text-slate-600">Fill in your details and we will confirm your appointment quickly.</p>
+            </div>
+
+            <form id="appointment-form" class="mt-8 grid gap-6">
+                <div>
+                    <label for="name" class="text-sm font-semibold text-slate-700">Full Name</label>
+                    <input id="name" name="name" type="text" placeholder="Enter your name" class="mt-2 w-full rounded-xl border border-white/40 bg-white/70 px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-slate-300 focus:ring-2 focus:ring-slate-200" />
+                </div>
+
+                <div>
+                    <label for="phone" class="text-sm font-semibold text-slate-700">Phone Number</label>
+                    <input id="phone" name="phone" type="tel" placeholder="Enter your phone number" class="mt-2 w-full rounded-xl border border-white/40 bg-white/70 px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-slate-300 focus:ring-2 focus:ring-slate-200" />
+                </div>
+
+                <div>
+                    <label for="address" class="text-sm font-semibold text-slate-700">Address</label>
+                    <input id="address" name="address" type="text" placeholder="Enter your address" class="mt-2 w-full rounded-xl border border-white/40 bg-white/70 px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-slate-300 focus:ring-2 focus:ring-slate-200" />
+                </div>
+
+                <div>
+                    <label for="vehicle" class="text-sm font-semibold text-slate-700">Vehicle Number</label>
+                    <input id="vehicle" name="vehicle" type="text" placeholder="Enter your vehicle number" class="mt-2 w-full rounded-xl border border-white/40 bg-white/70 px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-slate-300 focus:ring-2 focus:ring-slate-200" />
+                </div>
+
+                <div>
+                    <label for="issue" class="text-sm font-semibold text-slate-700">Issue Details</label>
+                    <textarea id="issue" name="issue" rows="4" placeholder="Describe the issue you are facing" class="mt-2 w-full rounded-xl border border-white/40 bg-white/70 px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-slate-300 focus:ring-2 focus:ring-slate-200"></textarea>
+                </div>
+
+                <button type="submit" class="w-full rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-slate-800">
+                    Book Appointment
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="mt-12 w-full border-t border-white/20 bg-white/20 backdrop-blur-md">
+        <div class="mx-auto flex w-full max-w-5xl flex-col items-center justify-between gap-3 px-4 py-6 text-sm text-slate-700 sm:flex-row">
+            <p class="font-semibold uppercase tracking-[0.2em] text-slate-800">AutoCare</p>
+            <p>© 2026 AutoCare. All rights reserved.</p>
+            <div class="flex items-center gap-4">
+                <a href="Home.html" class="transition hover:text-slate-900">Home</a>
+                <a href="contact.html" class="transition hover:text-slate-900">Contact</a>
+                <a href="feedback.html" class="transition hover:text-slate-900">Feedback</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="success-overlay" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 px-4">
+        <div class="relative w-full max-w-md rounded-3xl bg-white p-8 text-center shadow-2xl">
+            <button id="close-overlay" type="button" class="absolute right-4 top-4 rounded-full p-2 text-slate-500 transition hover:bg-slate-100 hover:text-slate-800" aria-label="Close">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 6L6 18"></path>
+                    <path d="M6 6l12 12"></path>
+                </svg>
+            </button>
+            <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-green-100">
+                <svg class="h-12 w-12 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20 6L9 17l-5-5"></path>
+                </svg>
+            </div>
+            <h2 class="mt-4 text-2xl font-bold text-slate-900">Appointment Booked</h2>
+            <p class="mt-2 text-sm text-slate-600">Your appointment is confirmed. Please print this page for your record.</p>
+            <div id="print-area" class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-left text-sm text-slate-700">
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Customer Details</p>
+                <div class="mt-3 grid gap-2">
+                    <p><span class="font-semibold text-slate-800">Name:</span> <span id="print-name"></span></p>
+                    <p><span class="font-semibold text-slate-800">Phone:</span> <span id="print-phone"></span></p>
+                    <p><span class="font-semibold text-slate-800">Address:</span> <span id="print-address"></span></p>
+                    <p><span class="font-semibold text-slate-800">Vehicle No:</span> <span id="print-vehicle"></span></p>
+                    <p><span class="font-semibold text-slate-800">Issue:</span> <span id="print-issue"></span></p>
+                </div>
+            </div>
+            <button id="print-btn" class="mt-6 w-full rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-slate-800">
+                Print Appointment
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById("appointment-form");
+        const overlay = document.getElementById("success-overlay");
+        const printBtn = document.getElementById("print-btn");
+        const closeOverlay = document.getElementById("close-overlay");
+
+        const printName = document.getElementById("print-name");
+        const printPhone = document.getElementById("print-phone");
+        const printAddress = document.getElementById("print-address");
+        const printVehicle = document.getElementById("print-vehicle");
+        const printIssue = document.getElementById("print-issue");
+
+        const API_BASE = window.location.protocol === "file:" ? "http://localhost:3000" : "";
+
+        const submitAppointment = async (payload) => {
+            const response = await fetch(`${API_BASE}/api/appointments`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            });
+            if (!response.ok) {
+                const data = await response.json().catch(() => ({}));
+                throw new Error(data.message || "Unable to submit appointment.");
+            }
+            return response.json();
+        };
+
+        const clearPrintDetails = () => {
+            printName.textContent = "";
+            printPhone.textContent = "";
+            printAddress.textContent = "";
+            printVehicle.textContent = "";
+            printIssue.textContent = "";
+        };
+
+        const closeAndReset = () => {
+            overlay.classList.add("hidden");
+            overlay.classList.remove("flex");
+            form.reset();
+            clearPrintDetails();
+        };
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            const nameValue = document.getElementById("name").value.trim();
+            const phoneValue = document.getElementById("phone").value.trim();
+            const addressValue = document.getElementById("address").value.trim();
+            const vehicleValue = document.getElementById("vehicle").value.trim();
+            const issueValue = document.getElementById("issue").value.trim();
+
+            if (!nameValue || !phoneValue || !addressValue || !vehicleValue || !issueValue) {
+                window.alert("Please fill in all appointment fields before submitting.");
+                return;
+            }
+
+            printName.textContent = nameValue;
+            printPhone.textContent = phoneValue;
+            printAddress.textContent = addressValue;
+            printVehicle.textContent = vehicleValue;
+            printIssue.textContent = issueValue;
+
+            try {
+                await submitAppointment({
+                    name: nameValue,
+                    phone: phoneValue,
+                    address: addressValue,
+                    vehicle: vehicleValue,
+                    issue: issueValue
+                });
+            } catch (err) {
+                window.alert(err.message);
+                return;
+            }
+            overlay.classList.remove("hidden");
+            overlay.classList.add("flex");
+        });
+
+        closeOverlay.addEventListener("click", closeAndReset);
+
+        printBtn.addEventListener("click", () => {
+            window.print();
+        });
+
+        window.addEventListener("afterprint", closeAndReset);
+    </script>
+</body>
+</html>

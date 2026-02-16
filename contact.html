@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="./theme.css" rel="stylesheet">
+    <link rel="icon" type="image/icon.svg" href="./assest/contact.svg">
+    <title>Contact Us</title>
+    <style>
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(16px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-float { animation: floatSlow 6s ease-in-out infinite; }
+        .animate-fade { animation: fadeUp 700ms ease both; }
+    </style>
+</head>
+<body class="page-shell theme-light motion-lite theme-teal min-h-screen bg-linear-to-br from-green-200 via-blue-300 to-green-300 text-slate-900">
+    <div class="pointer-events-none absolute -top-24 left-10 h-56 w-56 rounded-full bg-white/40 blur-3xl"></div>
+    <div class="pointer-events-none absolute right-10 top-40 h-64 w-64 rounded-full bg-blue-200/60 blur-3xl"></div>
+
+    <header class="relative z-10 w-full">
+        <nav class="mx-auto flex w-full max-w-5xl items-center justify-center px-4 py-6">
+            <div class="flex flex-wrap items-center justify-center gap-2 rounded-2xl border border-white/30 bg-white/40 p-2 shadow-lg backdrop-blur-md">
+                <a href="Home.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Home</a>
+                <a href="book Appoinment.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Book Appointment</a>
+                <a href="spare.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Spare Parts</a>
+                <a href="customer.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Customer Details</a>
+                <a href="feedback.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Feedback</a>
+                <a href="contact.html" class="rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-slate-900/20">Contact Us</a>
+                <a href="Login.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Log out</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 pb-16 pt-6">
+        <section class="glass-card lift rounded-3xl border border-white/20 bg-white/30 p-8 shadow-2xl backdrop-blur-md sm:p-10">
+            <div class="animate-fade">
+                <div class="title-row title-row-left">
+                    <span class="title-icon"><img src="./assest/contact.svg" alt="Contact icon"></span>
+                    <p class="text-sm font-semibold uppercase tracking-[0.35em] text-slate-700">Contact Us</p>
+                </div>
+                <h1 class="display-title mt-2 text-3xl font-bold text-slate-900 sm:text-4xl">Let’s Get Your Vehicle Road-Ready</h1>
+                <p class="mt-3 text-sm text-slate-600">Reach out with questions, booking requests, or urgent part needs. We reply fast and keep things simple.</p>
+            </div>
+        </section>
+
+        <section class="grid gap-8 lg:grid-cols-[1.1fr_1.4fr]">
+            <div class="grid gap-6">
+                <div class="glass-card lift animate-fade rounded-2xl border border-white/30 bg-white/60 p-6 shadow-lg">
+                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">Phone</p>
+                    <p class="mt-2 text-lg font-semibold text-slate-900">+91 6379598329</p>
+                    <p class="mt-1 text-sm text-slate-600">Mon–Sat, 9:00 AM – 7:00 PM</p>
+                </div>
+                <div class="glass-card lift animate-fade rounded-2xl border border-white/30 bg-white/60 p-6 shadow-lg [animation-delay:240ms]">
+                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">Location</p>
+                    <p class="mt-2 text-lg font-semibold text-slate-900">No:68 Jd street,Leo nagar, Chennai-600028</p>
+                    <p class="mt-1 text-sm text-slate-600">Near Aswin viduu</p>
+                </div>
+                <div class="glass-card lift animate-float rounded-2xl border border-white/30 bg-white/50 p-6 shadow-lg">
+                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">Fast Help</p>
+                    <p class="mt-2 text-sm text-slate-600">Need a quick response? Share your details and we’ll call you back.</p>
+                </div>
+            </div>
+
+            <div class="glass-card lift animate-fade rounded-3xl border border-white/30 bg-white/70 p-8 shadow-2xl [animation-delay:150ms]">
+                <h2 class="text-2xl font-bold text-slate-900">Send a Message</h2>
+                <p class="mt-2 text-sm text-slate-600">We’re here to help with appointments, parts, or service questions.</p>
+
+                <form id="contact-form" class="mt-6 grid gap-4">
+                    <div>
+                        <label for="contact-name" class="text-sm font-semibold text-slate-700">Full Name</label>
+                        <input id="contact-name" name="contact-name" type="text" placeholder="Enter your name" class="mt-2 w-full rounded-xl border border-white/60 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-slate-300 focus:ring-2 focus:ring-slate-200" />
+                    </div>
+                    <div>
+                        <label for="contact-phone" class="text-sm font-semibold text-slate-700">Phone</label>
+                        <input id="contact-phone" name="contact-phone" type="tel" placeholder="Enter your phone" class="mt-2 w-full rounded-xl border border-white/60 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-slate-300 focus:ring-2 focus:ring-slate-200" />
+                    </div>
+                    <div>
+                        <label for="contact-message" class="text-sm font-semibold text-slate-700">Message</label>
+                        <textarea id="contact-message" name="contact-message" rows="5" placeholder="Tell us how we can help" class="mt-2 w-full rounded-xl border border-white/60 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-slate-300 focus:ring-2 focus:ring-slate-200"></textarea>
+                    </div>
+                    <p id="contact-status" class="hidden rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700"></p>
+                    <button type="submit" class="mt-2 w-full rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-slate-800">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-12 w-full border-t border-white/20 bg-white/20 backdrop-blur-md">
+        <div class="mx-auto flex w-full max-w-5xl flex-col items-center justify-between gap-3 px-4 py-6 text-sm text-slate-700 sm:flex-row">
+            <p class="font-semibold uppercase tracking-[0.2em] text-slate-800">Saravanan AutoCare</p>
+            <p>© 2026 Saravanan AutoCare. All rights reserved.</p>
+            <div class="flex items-center gap-4">
+                <a href="Home.html" class="transition hover:text-slate-900">Home</a>
+                <a href="contact.html" class="transition hover:text-slate-900">Contact</a>
+                <a href="feedback.html" class="transition hover:text-slate-900">Feedback</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const contactForm = document.getElementById("contact-form");
+        const contactStatus = document.getElementById("contact-status");
+
+        const setStatus = (message, isError = false) => {
+            contactStatus.textContent = message;
+            contactStatus.classList.remove("hidden");
+            contactStatus.classList.toggle("border-emerald-200", !isError);
+            contactStatus.classList.toggle("bg-emerald-50", !isError);
+            contactStatus.classList.toggle("text-emerald-700", !isError);
+            contactStatus.classList.toggle("border-red-200", isError);
+            contactStatus.classList.toggle("bg-red-50", isError);
+            contactStatus.classList.toggle("text-red-700", isError);
+        };
+
+        const API_BASE = window.location.protocol === "file:" ? "http://localhost:3000" : "";
+
+        if (contactForm) {
+            contactForm.addEventListener("submit", async (event) => {
+                event.preventDefault();
+                const name = document.getElementById("contact-name").value.trim();
+                const phone = document.getElementById("contact-phone").value.trim();
+                const message = document.getElementById("contact-message").value.trim();
+
+                if (!name || !phone || !message) {
+                    setStatus("Please fill in all fields before submitting.", true);
+                    return;
+                }
+
+                try {
+                    const response = await fetch(`${API_BASE}/api/contact`, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ name, phone, message })
+                    });
+
+                    if (!response.ok) {
+                        const data = await response.json().catch(() => ({}));
+                        setStatus(data.message || "Unable to send your message.", true);
+                        return;
+                    }
+
+                    setStatus("Message sent! We will get back to you soon.");
+                    contactForm.reset();
+                } catch (err) {
+                    setStatus("Server error. Please try again.", true);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

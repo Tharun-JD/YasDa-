@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="./theme.css" rel="stylesheet">
+    <link rel="icon" type="image/svg-icon" href="./assest/spare.svg">
+    <title>Spare Parts Request</title>
+    <style>
+        @media print {
+            body * {
+                visibility: hidden !important;
+            }
+            #print-area,
+            #print-area * {
+                visibility: visible !important;
+            }
+            #print-area {
+                position: fixed;
+                inset: 0;
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body class="page-shell theme-light motion-lite theme-amber min-h-screen bg-linear-to-br from-green-200 via-blue-300 to-green-300 text-slate-900">
+    <header class="w-full">
+        <nav class="mx-auto flex w-full max-w-5xl items-center justify-center px-4 py-6">
+            <div class="flex flex-wrap items-center justify-center gap-2 rounded-2xl border border-white/30 bg-white/40 p-2 shadow-lg backdrop-blur-md">
+                <a href="Home.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Home</a>
+                <a href="book Appoinment.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Book Appointment</a>
+                <a href="spare.html" class="rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-slate-900/20">Spare Parts</a>
+                <a href="customer.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Customer Details</a>
+                <a href="feedback.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Feedback</a>
+                <a href="contact.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Contact Us</a>
+                <a href="Login.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Log out</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mx-auto flex w-full max-w-4xl flex-col items-center px-4 pb-16 pt-6">
+        <section class="glass-card lift w-full rounded-3xl border border-white/20 bg-white/30 p-8 shadow-2xl backdrop-blur-md sm:p-10">
+            <div class="text-center">
+                <div class="title-row">
+                    <span class="title-icon"><img src="./assest/spare.svg" alt="Spare parts icon"></span>
+                    <p class="text-sm font-semibold uppercase tracking-[0.35em] text-slate-700">Spare Parts</p>
+                </div>
+                <h1 class="display-title mt-2 text-3xl font-bold text-slate-900 sm:text-4xl">Request a Spare Part</h1>
+                <p class="mt-3 text-sm text-slate-600">Tell us what you need and we will get back to you soon.</p>
+            </div>
+
+            <form id="spare-form" method="get" action="spare.html" class="mt-8 grid gap-6">
+                <div>
+                    <label for="name" class="text-sm font-semibold text-slate-700">Full Name</label>
+                    <input id="name" name="name" type="text" placeholder="Enter your name" class="mt-2 w-full rounded-xl border border-white/40 bg-white/70 px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-slate-300 focus:ring-2 focus:ring-slate-200" />
+                </div>
+
+                <div>
+                    <label for="phone" class="text-sm font-semibold text-slate-700">Phone Number</label>
+                    <input id="phone" name="phone" type="tel" placeholder="Enter your phone number" class="mt-2 w-full rounded-xl border border-white/40 bg-white/70 px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-slate-300 focus:ring-2 focus:ring-slate-200" />
+                </div>
+
+                <div>
+                    <label for="address" class="text-sm font-semibold text-slate-700">Address</label>
+                    <input id="address" name="address" type="text" placeholder="Enter your address" class="mt-2 w-full rounded-xl border border-white/40 bg-white/70 px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-slate-300 focus:ring-2 focus:ring-slate-200" />
+                </div>
+
+                <div class="rounded-2xl border border-white/30 bg-white/40 p-4">
+                    <div class="flex items-center justify-between">
+                        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-600">Parts List</p>
+                        <button id="add-part" type="button" class="rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:-translate-y-0.5 hover:bg-slate-800">
+                            Add
+                        </button>
+                    </div>
+                    <div id="parts-items" class="mt-4 grid gap-4"></div>
+                    <datalist id="parts-list"></datalist>
+                    <div class="mt-4 rounded-xl bg-white/70 p-3 text-right text-sm font-semibold text-slate-800">
+                        Total Amount: <span id="form-total">0.00</span>
+                    </div>
+                </div>
+
+                <p id="form-error" class="hidden rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"></p>
+
+                <button type="submit" class="w-full rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-slate-800">
+                    Submit Request
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="mt-12 w-full border-t border-white/20 bg-white/20 backdrop-blur-md">
+        <div class="mx-auto flex w-full max-w-5xl flex-col items-center justify-between gap-3 px-4 py-6 text-sm text-slate-700 sm:flex-row">
+            <p class="font-semibold uppercase tracking-[0.2em] text-slate-800">AutoCare</p>
+            <p>© 2026 AutoCare. All rights reserved.</p>
+            <div class="flex items-center gap-4">
+                <a href="Home.html" class="transition hover:text-slate-900">Home</a>
+                <a href="contact.html" class="transition hover:text-slate-900">Contact</a>
+                <a href="feedback.html" class="transition hover:text-slate-900">Feedback</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="success-overlay" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 px-4">
+        <div class="relative w-full max-w-lg rounded-3xl bg-white p-8 text-center shadow-2xl">
+            <button id="close-overlay" type="button" class="absolute right-4 top-4 rounded-full p-2 text-slate-500 transition hover:bg-slate-100 hover:text-slate-800" aria-label="Close">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 6L6 18"></path>
+                    <path d="M6 6l12 12"></path>
+                </svg>
+            </button>
+            <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-green-100">
+                <svg class="h-12 w-12 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20 6L9 17l-5-5"></path>
+                </svg>
+            </div>
+            <h2 class="mt-4 text-2xl font-bold text-slate-900">Request Submitted</h2>
+            <p class="mt-2 text-sm text-slate-600">Your spare parts request is saved. Please print this page for your record.</p>
+            <div id="print-area" class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-left text-sm text-slate-700">
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Customer Details</p>
+                <div class="mt-3 grid gap-2">
+                    <p><span class="font-semibold text-slate-800">Name:</span> <span id="print-name"></span></p>
+                    <p><span class="font-semibold text-slate-800">Phone:</span> <span id="print-phone"></span></p>
+                    <p><span class="font-semibold text-slate-800">Address:</span> <span id="print-address"></span></p>
+                </div>
+                <div class="mt-4">
+                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Parts Details</p>
+                    <div id="print-parts" class="mt-2 grid gap-2"></div>
+                </div>
+                <div class="mt-4 rounded-xl bg-white p-3 text-right text-sm font-semibold text-slate-800">
+                    Total Amount: <span id="print-total"></span>
+                </div>
+            </div>
+            <button id="print-btn" class="mt-6 w-full rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-slate-800">
+                Print Parts Details
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const partsList = document.getElementById("parts-list");
+        const partsItems = document.getElementById("parts-items");
+        const addPartBtn = document.getElementById("add-part");
+        const form = document.getElementById("spare-form");
+        const overlay = document.getElementById("success-overlay");
+        const closeOverlay = document.getElementById("close-overlay");
+        const printBtn = document.getElementById("print-btn");
+        const formError = document.getElementById("form-error");
+        const printName = document.getElementById("print-name");
+        const printPhone = document.getElementById("print-phone");
+        const printAddress = document.getElementById("print-address");
+        const printParts = document.getElementById("print-parts");
+        const printTotal = document.getElementById("print-total");
+        const formTotal = document.getElementById("form-total");
+        let partIndex = 0;
+
+        const API_BASE = window.location.protocol === "file:" ? "http://localhost:3000" : "";
+
+        const submitSpareRequest = async (payload) => {
+            const response = await fetch(`${API_BASE}/api/spares`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            });
+            if (!response.ok) {
+                const data = await response.json().catch(() => ({}));
+                throw new Error(data.message || "Unable to submit spare parts request.");
+            }
+            return response.json();
+        };
+
+        fetch(`${API_BASE}/data/spare-parts.json`)
+            .then((response) => response.json())
+            .then((data) => {
+                const parts = Array.isArray(data.parts) ? data.parts : [];
+                const fragment = document.createDocumentFragment();
+                parts.forEach((part) => {
+                    const option = document.createElement("option");
+                    option.value = part;
+                    fragment.appendChild(option);
+                });
+                partsList.appendChild(fragment);
+            })
+            .catch(() => {
+                console.error("Failed to load spare parts data.");
+            });
+
+        const createPartRow = () => {
+            partIndex += 1;
+            const row = document.createElement("div");
+            row.className = "part-row grid gap-3 rounded-2xl border border-white/40 bg-white/70 p-4 sm:grid-cols-3";
+            row.innerHTML = `
+                <div>
+                    <label class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">Part Name</label>
+                    <input name="part_name_${partIndex}" type="text" list="parts-list" placeholder="Enter a parts name" class="mt-2 w-full rounded-xl border border-white/60 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none transition focus:border-slate-300 focus:ring-2 focus:ring-slate-200" />
+                </div>
+                <div>
+                    <label class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">Quantity</label>
+                    <input name="part_qty_${partIndex}" type="number" min="1" placeholder="Qty" class="mt-2 w-full rounded-xl border border-white/60 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none transition focus:border-slate-300 focus:ring-2 focus:ring-slate-200" />
+                </div>
+                <div>
+                    <label class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">Amount</label>
+                    <input name="part_amount_${partIndex}" type="text" placeholder="Enter amount" class="mt-2 w-full rounded-xl border border-white/60 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none transition focus:border-slate-300 focus:ring-2 focus:ring-slate-200" />
+                </div>
+            `;
+            partsItems.appendChild(row);
+        };
+
+        const formatCurrency = (value) => {
+            if (!Number.isFinite(value)) return "0";
+            return value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        };
+
+        const toNumber = (raw) => {
+            const cleaned = String(raw || "").replace(/[^0-9.]/g, "");
+            const value = Number.parseFloat(cleaned);
+            return Number.isFinite(value) ? value : 0;
+        };
+
+        const computeTotalFromRows = () => {
+            const rows = Array.from(partsItems.querySelectorAll(".part-row"));
+            let total = 0;
+            rows.forEach((row) => {
+                const inputs = row.querySelectorAll("input");
+                const qtyNumber = toNumber(inputs[1]?.value);
+                const unitAmount = toNumber(inputs[2]?.value);
+                if (qtyNumber > 0 && unitAmount > 0) {
+                    total += qtyNumber * unitAmount;
+                }
+            });
+            return total;
+        };
+
+        const updateFormTotal = () => {
+            formTotal.textContent = formatCurrency(computeTotalFromRows());
+        };
+
+        addPartBtn.addEventListener("click", createPartRow);
+        createPartRow();
+        updateFormTotal();
+
+        const openOverlay = () => {
+            overlay.classList.remove("hidden");
+            overlay.classList.add("flex");
+        };
+
+        const resetPartsList = () => {
+            partsItems.textContent = "";
+            createPartRow();
+        };
+
+        const closeAndReset = () => {
+            overlay.classList.add("hidden");
+            overlay.classList.remove("flex");
+            form.reset();
+            printName.textContent = "";
+            printPhone.textContent = "";
+            printAddress.textContent = "";
+            printParts.textContent = "";
+            printTotal.textContent = "";
+            resetPartsList();
+            updateFormTotal();
+        };
+
+        const clearUrlParams = () => {
+            if (window.location.search) {
+                window.history.replaceState({}, "", window.location.pathname);
+            }
+        };
+
+        clearUrlParams();
+
+        const showError = (message) => {
+            formError.textContent = message;
+            formError.classList.remove("hidden");
+        };
+
+        const clearError = () => {
+            formError.textContent = "";
+            formError.classList.add("hidden");
+        };
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            clearError();
+
+            const nameValue = document.getElementById("name").value.trim();
+            const phoneValue = document.getElementById("phone").value.trim();
+            const addressValue = document.getElementById("address").value.trim();
+
+            if (!nameValue || !phoneValue || !addressValue) {
+                showError("Please fill in customer name, phone number, and address.");
+                return;
+            }
+
+            printName.textContent = nameValue;
+            printPhone.textContent = phoneValue;
+            printAddress.textContent = addressValue;
+
+            const rows = Array.from(partsItems.querySelectorAll(".part-row"));
+            let total = 0;
+            printParts.textContent = "";
+            let hasValidPart = false;
+            const partsPayload = [];
+
+            rows.forEach((row) => {
+                const inputs = row.querySelectorAll("input");
+                const partName = inputs[0]?.value.trim() ?? "";
+                const qtyValue = inputs[1]?.value.trim() ?? "";
+                const amountValue = inputs[2]?.value.trim() ?? "";
+                const qtyNumber = toNumber(qtyValue);
+                const unitAmount = toNumber(amountValue);
+                const lineTotal = qtyNumber > 0 && unitAmount > 0 ? qtyNumber * unitAmount : 0;
+
+                if (partName || qtyValue || amountValue) {
+                    partsPayload.push({
+                        name: partName,
+                        qty: qtyValue,
+                        amount: amountValue,
+                        lineTotal
+                    });
+                    const line = document.createElement("p");
+                    line.textContent = `${partName || "Part"} | Qty: ${qtyValue || "1"} | Unit: ${amountValue || "0"} | Line: ${formatCurrency(lineTotal)}`;
+                    printParts.appendChild(line);
+                    if (partName && qtyValue && amountValue) {
+                        hasValidPart = true;
+                    }
+                }
+
+                total += lineTotal;
+            });
+
+            if (!hasValidPart) {
+                showError("Please add at least one part with name, quantity, and amount.");
+                printParts.textContent = "";
+                printTotal.textContent = "";
+                return;
+            }
+
+            printTotal.textContent = formatCurrency(total);
+            updateFormTotal();
+            const partsSummary = Array.from(printParts.querySelectorAll("p"))
+                .map((item) => item.textContent)
+                .join(" | ");
+
+            try {
+                await submitSpareRequest({
+                    name: printName.textContent,
+                    phone: printPhone.textContent,
+                    address: printAddress.textContent,
+                    parts: partsPayload,
+                    total: printTotal.textContent
+                });
+            } catch (err) {
+                showError(err.message);
+                printParts.textContent = "";
+                printTotal.textContent = "";
+                return;
+            }
+            openOverlay();
+            form.reset();
+            resetPartsList();
+            updateFormTotal();
+            clearUrlParams();
+        });
+
+        closeOverlay.addEventListener("click", closeAndReset);
+        printBtn.addEventListener("click", () => {
+            window.print();
+        });
+        window.addEventListener("afterprint", closeAndReset);
+        partsItems.addEventListener("input", updateFormTotal);
+    </script>
+</body>
+</html>

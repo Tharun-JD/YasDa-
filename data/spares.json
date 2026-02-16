@@ -1,0 +1,115 @@
+[
+  {
+    "id": "6d9b8d78-873d-49b3-b08f-13abb105f8ce",
+    "type": "Spare Parts",
+    "name": "Tharun",
+    "phone": "6379598329",
+    "address": "no.12 west anna nagar chennai-600052",
+    "details": "Crankshaft | Qty: 1 | Amount: 50 | Brake Pad | Qty: 1 | Amount: 50 | Total: 100.00",
+    "createdAt": "2026-02-05T06:57:21.429Z",
+    "email": "tharundevi12345@gmail.com",
+    "parts": [
+      {
+        "name": "Crankshaft",
+        "qty": "1",
+        "amount": "50"
+      },
+      {
+        "name": "Brake Pad",
+        "qty": "1",
+        "amount": "50"
+      }
+    ],
+    "total": "100.00"
+  },
+  {
+    "id": "6210089b-5512-4eec-9aca-cbdc9b72d091",
+    "type": "Spare Parts",
+    "name": "Tharun",
+    "phone": "6379598329",
+    "address": "no.12 west anna nagar chennai-600052",
+    "details": "Clutch Disc | Qty: 1 | Amount: 50 | Air Filter | Qty: 5 | Amount: 50 | Total: 100.00",
+    "createdAt": "2026-02-05T07:33:39.231Z",
+    "email": "tharundevi12345@gmail.com",
+    "parts": [
+      {
+        "name": "Clutch Disc",
+        "qty": "1",
+        "amount": "50"
+      },
+      {
+        "name": "Air Filter",
+        "qty": "5",
+        "amount": "50"
+      }
+    ],
+    "total": "100.00"
+  },
+  {
+    "id": "6c0550f9-079d-43e7-86d9-e3e45a6845e9",
+    "type": "Spare Parts",
+    "name": "Tharun",
+    "phone": "6379598329",
+    "address": "no.12 west anna nagar chennai-600052",
+    "details": "Clutch Master Cylinder | Qty: 4 | Amount: 50 | Total: 50.00",
+    "createdAt": "2026-02-05T08:06:01.239Z",
+    "email": "tharundevi12345@gmail.com",
+    "parts": [
+      {
+        "name": "Clutch Master Cylinder",
+        "qty": "4",
+        "amount": "50"
+      }
+    ],
+    "total": "50.00"
+  },
+  {
+    "id": "53cb4d28-5160-4516-9af9-f935bae32f00",
+    "type": "Spare Parts",
+    "name": "Tharun",
+    "phone": "6379598329",
+    "address": "no.12 west anna nagar chennai-600052",
+    "details": "Axle Shaft | Qty: 5 | Amount: 50 | Bushing | Qty: 10 | Amount: 1000 | Total: 10,250.00",
+    "createdAt": "2026-02-05T08:18:30.066Z",
+    "email": "tharundevi12345@gmail.com",
+    "parts": [
+      {
+        "name": "Axle Shaft",
+        "qty": "5",
+        "amount": "50",
+        "lineTotal": 250
+      },
+      {
+        "name": "Bushing",
+        "qty": "10",
+        "amount": "1000",
+        "lineTotal": 10000
+      }
+    ],
+    "total": "10,250.00"
+  },
+  {
+    "id": "059e286e-fa38-4a00-bd6d-ec6a05bc3b2b",
+    "type": "Spare Parts",
+    "name": "tharun",
+    "phone": "6379598329",
+    "address": "mghdfjhgsd",
+    "details": "Brake Pad | Qty: 5 | Amount: 50 | Bushing | Qty: 5 | Amount: 1000 | Total: 5,250.00",
+    "createdAt": "2026-02-06T17:20:48.165Z",
+    "parts": [
+      {
+        "name": "Brake Pad",
+        "qty": "5",
+        "amount": "50",
+        "lineTotal": 250
+      },
+      {
+        "name": "Bushing",
+        "qty": "5",
+        "amount": "1000",
+        "lineTotal": 5000
+      }
+    ],
+    "total": "5,250.00"
+  }
+]

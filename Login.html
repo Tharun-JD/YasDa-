@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="./output.css" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="./theme.css" rel="stylesheet">
+    <link rel="icon" type="image/svg-icon" href="./assest/login.svg">
+    <title>Log-in</title>
+    <style>
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(18px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        @keyframes glowSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .animate-fade { animation: fadeUp 700ms ease both; }
+        .animate-float { animation: floatSlow 6s ease-in-out infinite; }
+        .animate-spin-slow { animation: glowSpin 14s linear infinite; }
+    </style>
+</head>
+<body class="page-shell theme-dark motion-lite theme-night min-h-screen bg-linear-to-br from-slate-950 via-indigo-950 to-emerald-950 text-slate-100">
+    <div class="relative min-h-screen overflow-hidden">
+        <div class="pointer-events-none absolute -top-32 left-8 h-72 w-72 rounded-full bg-cyan-400/20 blur-3xl animate-pulse"></div>
+        <div class="pointer-events-none absolute bottom-0 right-0 h-80 w-80 rounded-full bg-emerald-400/20 blur-3xl animate-pulse"></div>
+        <div class="pointer-events-none absolute left-1/2 top-24 h-40 w-40 -translate-x-1/2 rounded-full bg-indigo-400/15 blur-2xl"></div>
+
+        <main class="relative z-10 mx-auto flex min-h-screen w-full max-w-5xl items-center justify-center px-4 py-12">
+            <div class="relative w-full max-w-lg">
+                <div class="absolute -inset-6 rounded-4xl bg-linear-to-r from-emerald-400/30 via-cyan-400/20 to-indigo-400/30 blur-2xl animate-pulse"></div>
+                <div class="absolute -inset-3 rounded-[28px] border border-white/10 bg-linear-to-r from-emerald-500/10 via-cyan-500/10 to-indigo-500/10 animate-spin-slow"></div>
+                <section class="glass-card lift animate-fade relative w-full rounded-3xl border border-white/10 bg-white/10 p-8 shadow-2xl backdrop-blur-md sm:p-10">
+                <div class="text-center">
+                    <div class="title-row">
+                        <span class="title-icon animate-float"><img src="./assest/login.svg" alt="Login icon"></span>
+                        <p class="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-300/80">AutoCare</p>
+                    </div>
+                    <h1 class="display-title mt-3 text-3xl font-semibold text-white sm:text-4xl">Log in</h1>
+                    <p class="mt-2 text-sm text-slate-300">Access your service dashboard.</p>
+                </div>
+
+                <form action="Home.html" method="get" class="mt-8 space-y-5" id="loginForm">
+                    <div class="space-y-2 text-left">
+                        <label for="username" class="text-sm font-medium text-slate-200">Admin ID</label>
+                        <input type="text" name="username" id="username" placeholder="Enter your ID"
+                            class="w-full rounded-xl border border-white/10 bg-slate-900/40 px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/40">
+                    </div>
+                    <div class="space-y-2 text-left">
+                        <label for="password" class="text-sm font-medium text-slate-200">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Enter your password"
+                            class="w-full rounded-xl border border-white/10 bg-slate-900/40 px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/40">
+                    </div>
+                    <p id="loginError" class="hidden text-sm text-rose-300" role="alert">
+                        Please enter both ID and password.
+                    </p>
+                    <button type="submit"
+                        class="group relative w-full overflow-hidden rounded-xl bg-linear-to-r from-emerald-400 via-teal-400 to-cyan-400 px-4 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-slate-900 shadow-lg transition duration-300 hover:-translate-y-0.5 hover:shadow-emerald-400/40 focus:outline-none focus:ring-2 focus:ring-emerald-300/60">
+                        Log in
+                    </button>
+                </form>
+
+                <div class="mt-8 grid gap-3 sm:grid-cols-3">
+                    <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-3 text-center text-xs text-slate-300">Fast booking</div>
+                    <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-3 text-center text-xs text-slate-300">Secure access</div>
+                    <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-3 text-center text-xs text-slate-300">Live updates</div>
+                </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <footer class="w-full border-t border-white/10 bg-white/5 backdrop-blur-md">
+        <div class="mx-auto flex w-full max-w-5xl flex-col items-center justify-between gap-3 px-4 py-6 text-sm text-slate-300 sm:flex-row">
+            <p class="font-semibold uppercase tracking-[0.2em] text-slate-200">AutoCare</p>
+            <p>© 2026 AutoCare. All rights reserved.</p>
+            <div class="flex items-center gap-4">
+                <a href="Home.html" class="transition hover:text-white">Home</a>
+                <a href="contact.html" class="transition hover:text-white">Contact</a>
+                <a href="feedback.html" class="transition hover:text-white">Feedback</a>
+            </div>
+        </div>
+    </footer>
+    <script>document.addEventListener("DOMContentLoaded", () => {
+    const API_BASE = window.location.protocol === "file:" ? "http://localhost:3000" : "";
+    const form = document.getElementById("loginForm");
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+    const error = document.getElementById("loginError");
+
+    if (!form || !username || !password || !error) return;
+
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const userValue = username.value.trim();
+        const passValue = password.value.trim();
+
+        if (!userValue || !passValue) {
+            error.classList.remove("hidden");
+            error.textContent = "Please enter both ID and password.";
+            return;
+        }
+
+        try {
+            const response = await fetch(`${API_BASE}/api/login`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username: userValue, password: passValue })
+            });
+
+            if (!response.ok) {
+                const data = await response.json().catch(() => ({}));
+                error.textContent = data.message || "Login failed. Please try again.";
+                error.classList.remove("hidden");
+                return;
+            }
+
+            error.classList.add("hidden");
+            window.location.href = "Home.html";
+        } catch (err) {
+            error.textContent = "Server error. Please try again.";
+            error.classList.remove("hidden");
+        }
+    });
+});
+</script>
+</body>
+</html>

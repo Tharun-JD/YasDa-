@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="./theme.css" rel="stylesheet">
+    <title>Customer Details</title>
+    <style>
+        @media print {
+            body * {
+                visibility: hidden !important;
+            }
+            #print-area,
+            #print-area * {
+                visibility: visible !important;
+            }
+            #print-area {
+                display: block !important;
+                position: fixed;
+                inset: 0;
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body class="page-shell theme-light motion-lite theme-indigo flex min-h-screen flex-col bg-linear-to-br from-green-200 via-blue-300 to-green-300 text-slate-900">
+    <header class="w-full">
+        <nav class="mx-auto flex w-full max-w-5xl items-center justify-center px-4 py-6">
+            <div class="flex flex-wrap items-center justify-center gap-2 rounded-2xl border border-white/30 bg-white/40 p-2 shadow-lg backdrop-blur-md">
+                <a href="Home.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Home</a>
+                <a href="book Appoinment.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Book Appointment</a>
+                <a href="spare.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Spare Parts</a>
+                <a href="customer.html" class="rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-slate-900/20">Customer Details</a>
+                <a href="feedback.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Feedback</a>
+                <a href="contact.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Contact Us</a>
+                <a href="Login.html" class="rounded-xl px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white/70 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/60">Log out</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 pb-16 pt-6">
+        <section class="glass-card lift w-full rounded-3xl border border-white/20 bg-white/30 p-8 shadow-2xl backdrop-blur-md sm:p-10">
+            <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                    <div class="title-row title-row-left">
+                        <span class="title-icon"><img src="./assest/about-us.svg" alt="Customer icon"></span>
+                        <p class="text-sm font-semibold uppercase tracking-[0.35em] text-slate-700">Customer Details</p>
+                    </div>
+                    <h1 class="display-title mt-2 text-3xl font-bold text-slate-900 sm:text-4xl">Bookings Summary</h1>
+                    <p class="mt-3 text-sm text-slate-600">Shows customers who booked appointments or requested spare parts.</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-3">
+                    <button id="export-btn" class="rounded-xl border border-slate-300 bg-white/70 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-slate-800 shadow-lg transition hover:-translate-y-0.5 hover:bg-white">
+                        Export Data
+                    </button>
+                    <button id="print-btn" class="rounded-xl bg-slate-900 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-slate-800">
+                        Print Details
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-8 overflow-x-auto">
+                <table class="min-w-full rounded-2xl border border-white/30 bg-white/60 text-left text-sm">
+                    <thead class="bg-white/70 text-slate-600">
+                        <tr>
+                            <th class="px-4 py-3 font-semibold uppercase tracking-[0.2em]">Type</th>
+                            <th class="px-4 py-3 font-semibold uppercase tracking-[0.2em]">Name</th>
+                            <th class="px-4 py-3 font-semibold uppercase tracking-[0.2em]">Phone</th>
+                            <th class="px-4 py-3 font-semibold uppercase tracking-[0.2em]">Address</th>
+                            <th class="px-4 py-3 font-semibold uppercase tracking-[0.2em]">Details</th>
+                            <th class="px-4 py-3 font-semibold uppercase tracking-[0.2em] text-right">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customer-rows" class="text-slate-800"></tbody>
+                </table>
+            </div>
+
+            <p id="empty-state" class="mt-6 text-sm text-slate-600">No customer records yet.</p>
+        </section>
+
+        <div id="print-area" class="hidden">
+            <h2 class="text-xl font-bold text-slate-900">Customer Details</h2>
+            <table class="mt-4 w-full text-left text-sm text-slate-700">
+                <thead>
+                    <tr>
+                        <th class="border-b border-slate-200 pb-2 pr-2 font-semibold uppercase tracking-[0.2em]">Type</th>
+                        <th class="border-b border-slate-200 pb-2 pr-2 font-semibold uppercase tracking-[0.2em]">Name</th>
+                        <th class="border-b border-slate-200 pb-2 pr-2 font-semibold uppercase tracking-[0.2em]">Phone</th>
+                        <th class="border-b border-slate-200 pb-2 pr-2 font-semibold uppercase tracking-[0.2em]">Address</th>
+                        <th class="border-b border-slate-200 pb-2 font-semibold uppercase tracking-[0.2em]">Details</th>
+                    </tr>
+                </thead>
+                <tbody id="print-content"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="mt-12 w-full border-t border-white/20 bg-white/20 backdrop-blur-md">
+        <div class="mx-auto flex w-full max-w-5xl flex-col items-center justify-between gap-3 px-4 py-6 text-sm text-slate-700 sm:flex-row">
+            <p class="font-semibold uppercase tracking-[0.2em] text-slate-800">AutoCare</p>
+            <p>© 2026 AutoCare. All rights reserved.</p>
+            <div class="flex items-center gap-4">
+                <a href="Home.html" class="transition hover:text-slate-900">Home</a>
+                <a href="contact.html" class="transition hover:text-slate-900">Contact</a>
+                <a href="feedback.html" class="transition hover:text-slate-900">Feedback</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const rowsContainer = document.getElementById("customer-rows");
+        const emptyState = document.getElementById("empty-state");
+        const printBtn = document.getElementById("print-btn");
+        const exportBtn = document.getElementById("export-btn");
+        const printContent = document.getElementById("print-content");
+        const API_BASE = window.location.protocol === "file:" ? "http://localhost:3000" : "";
+        let records = [];
+
+        const fetchRecords = async () => {
+            const response = await fetch(`${API_BASE}/api/customer-records`);
+            if (!response.ok) {
+                throw new Error("Unable to load customer records.");
+            }
+            const data = await response.json();
+            return Array.isArray(data.records) ? data.records : [];
+        };
+
+        const deleteRecord = async (id) => {
+            const response = await fetch(`${API_BASE}/api/customer-records/${id}`, { method: "DELETE" });
+            if (!response.ok) {
+                const data = await response.json().catch(() => ({}));
+                throw new Error(data.message || "Unable to delete record.");
+            }
+        };
+
+        const render = (recordsToRender) => {
+            rowsContainer.textContent = "";
+            printContent.textContent = "";
+
+            if (recordsToRender.length === 0) {
+                emptyState.classList.remove("hidden");
+                return;
+            }
+
+            emptyState.classList.add("hidden");
+
+            recordsToRender.forEach((record) => {
+                const row = document.createElement("tr");
+                row.className = "border-t border-white/40";
+                row.innerHTML = `
+                    <td class="px-4 py-3 font-semibold text-slate-700">${record.type}</td>
+                    <td class="px-4 py-3">${record.name}</td>
+                    <td class="px-4 py-3">${record.phone}</td>
+                    <td class="px-4 py-3">${record.address}</td>
+                    <td class="px-4 py-3">${record.details}</td>
+                    <td class="px-4 py-3 text-right">
+                        <button data-id="${record.id}" class="delete-row inline-flex items-center justify-center rounded-full border border-red-200 bg-red-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-red-600 transition hover:bg-red-100">Delete</button>
+                    </td>
+                `;
+                rowsContainer.appendChild(row);
+
+                const printRow = document.createElement("tr");
+                printRow.innerHTML = `
+                    <td class="border-b border-slate-200 py-2 pr-2">${record.type}</td>
+                    <td class="border-b border-slate-200 py-2 pr-2">${record.name}</td>
+                    <td class="border-b border-slate-200 py-2 pr-2">${record.phone}</td>
+                    <td class="border-b border-slate-200 py-2 pr-2">${record.address}</td>
+                    <td class="border-b border-slate-200 py-2">${record.details}</td>
+                `;
+                printContent.appendChild(printRow);
+            });
+        };
+
+        const loadRecords = async () => {
+            try {
+                records = await fetchRecords();
+                render(records);
+            } catch (err) {
+                rowsContainer.textContent = "";
+                printContent.textContent = "";
+                emptyState.classList.remove("hidden");
+            }
+        };
+
+        rowsContainer.addEventListener("click", async (event) => {
+            const target = event.target.closest(".delete-row");
+            if (!target) return;
+            const id = target.dataset.id;
+            try {
+                await deleteRecord(id);
+                records = records.filter((record) => record.id !== id);
+                render(records);
+            } catch (err) {
+                window.alert(err.message);
+            }
+        });
+
+        printBtn.addEventListener("click", () => {
+            if (records.length === 0) {
+                emptyState.classList.remove("hidden");
+                return;
+            }
+            render(records);
+            window.print();
+        });
+
+        exportBtn.addEventListener("click", () => {
+            if (records.length === 0) {
+                emptyState.classList.remove("hidden");
+                return;
+            }
+            const blob = new Blob([JSON.stringify(records, null, 2)], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "data/customer-records.json";
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+            URL.revokeObjectURL(url);
+        });
+
+        loadRecords();
+    </script>
+</body>
+</html>
