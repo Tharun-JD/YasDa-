@@ -255,5 +255,23 @@
       }
     ],
     "total": "5,250.00"
+  },
+  {
+    "id": "bcee6e06-5d3b-477d-b83a-c0496a4939c0",
+    "type": "Spare Parts",
+    "name": "tharun",
+    "phone": "6379598329",
+    "address": "mghdfjhgsd",
+    "details": "Brake Rotor | Qty: 5 | Amount: 50 | Total: 250.00",
+    "createdAt": "2026-02-18T05:11:20.274Z",
+    "parts": [
+      {
+        "name": "Brake Rotor",
+        "qty": "5",
+        "amount": "50",
+        "lineTotal": 250
+      }
+    ],
+    "total": "250.00"
   }
 ]
