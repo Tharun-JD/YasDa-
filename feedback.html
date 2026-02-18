@@ -140,7 +140,13 @@
             });
         });
 
-        const API_BASE = window.location.protocol === "file:" ? "http://localhost:3000" : "";
+        const API_BASE = (() => {
+            if (window.location.protocol === "file:") return "http://localhost:3000";
+            if (window.location.hostname === "localhost" && window.location.port && window.location.port !== "3000") {
+                return "http://localhost:3000";
+            }
+            return "";
+        })();
 
         const fetchFeedback = async () => {
             const response = await fetch(`${API_BASE}/api/feedback`);
